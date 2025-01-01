@@ -1,0 +1,58 @@
+How DNS works?
+--------------------
+DNS is like a dictionary...
+key=value
+    sivakumar.online=IP address
+when you enter sivakumar.online first time? what happens here? ->> Where can I find IP address? --> browser checks its cache? --> if not find anything? then it asks OS ->> OS checks it's cache. If not finds anything ->> OS sends a request to ISP.... it is ISP responsibility to get the IP address of a domain
+
+DNS resolution...
+--------------------
+Resolver is the component responsible to fetch IP address. it is from ISP.
+ All ISP are configured with how to send a request to root servers..
+
+Root servers
+------------------------
+maintains all TLDs (Top level domains)
+Who owns root servers? --> ICANN (Internet corporation for assigned names and numbers)
+    12 non profit organisations across the world manages these root servers.13 root servers across the world with many servers in background
+
+TLD
+	.com .net .org .in .us .uk .online .ai .shop .site .edu .org .co .inc
+Root server will give the information of .com TLD, this info will be stored in resolver cache.,it will contact .com TLD., .com TLD should maintain what is the IP address of joindevops.com
+
+Domain Registars/Providers
+---------------------------
+godaddy hostinger route53 google 
+when you buy a domain in hostinger, they will update .com TLD about your domain, address details, etc.
+
+domain name
+address
+nameservers
+
+hostinger --> AWS transfer
+
+I updated AWS NS in hostinger...
+
+hostinger will update nameservers to the TLD. Now .online TLD have AWS nameserver details
+
+daws78s.online --> resolver contacts .online TLD -->> .online TLD will give nameserver details....-->> resolver will get AWS NS details...-->> then resolver will contact AWS NS. Then AWS will give A record
+
+To update A record in AWS:
+-----------------------------
+public ip of server -->> route 53 -> domain -> A record -> in value section add ip addrs, main tain TTL 1 sec
+
+DNS will be resolved through nameswervers.
+
+nslookup command helps to check ip address and A record
+    ex: nslookup <domain>
+
+fastest automated way
+---------------------
+without touching the configurations and servers
+if you do any config change, you have to restart application...
+
+A record --> IP address of the domain
+NS --> authoritive nameservers
+SOA --> Ownership record
+CNAME(canonical name) --> another domain
+MX records --> mail servers

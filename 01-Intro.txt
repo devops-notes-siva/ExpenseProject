@@ -1,0 +1,117 @@
+2 types of process in linux terminal 1)foreground 2)background
+-> to runin background ex: $ sleep 20 &
+-> to filter grep $ ps -ef | grep sleep | grep -v grep
+
+$ kill -> request to stop , graceful termination
+$ kill -9 -> force to stop
+$ top -> running process with CPU & RAM
+$ netstat -tlnup -> lists tcp opened ports & thier PID
+
+
+build files for diff langs:
+------------------------
+package.json --> nodeJS
+pom.xml --> java
+requirements.txt --> python
+
+termination of applications:
+----------------------------
+LB
+frontend
+backend
+DB
+
+AMI:
+----
+devops-practice -> ec2-user, DevOps321
+
+DB-mysql --> 3306
+-------------
+$ mysql
+$ show databases;
+    $ use transactions;
+    $ show tables;
+    $ select * from transactions;
+$ exit
+
+-> to check server connection:
+$ ping -c <no> <ip_addr>
+        ex: ping -c 5 google.com
+
+-> to check application on  port
+    $ telenet <ip_addr> <port_no>
+
+backend apps usually runs on 8080 port
+
+NodeJS Structure
+--------------------
+.js files --> java script files
+package.json -> developers mention the dependencies and thier version
+				it is a build file
+server vs client:
+-----------------
+mysql-server --> this is server
+mysql --> client
+
+Linux --> Server
+Putty --> SSH client
+
+facebook.com --> http server
+browser --> http client
+
+credentials used by our nodejs application to connect
+expense
+ExpenseApp@1
+
+
+what is proxy?
+-----------------
+some one on behalf of you == proxy
+VPN will change our location to US...
+Forward Proxy
+----------------
+clients are aware of VPN, but servers are not aware
+mobile is aware of VPN
+    ex: our company laptop uses forward proxy to monitor the traffic
+
+company VPN
+---------------
+restrict the websites
+monitor the user requests
+
+Reverse Proxy
+-----------------
+clients are not aware of proxy/VPN, only servers are aware
+    ex: face book login, here browser not knows about proxy but face book server has reverse proxy
+SSL termination
+Some secure features
+
+
+http://54.85.211.179/api/transaction
+
+http://54.85.211.179/api/transaction
+
+{
+    "result": [
+
+Domains:
+----------
+crete domain hostinger site cost is less,
+in AWS to crete domain  ::   route 53 -> registered domains
+
+transfering domain created in hostinger to AWS:
+----------------------------------------------
+route 53 -> hosted zones -> add here, after this copy value/route traffic to(name server records)
+
+in hostinger site -> dns nameservers -> change name servers
+now in AWS in hosted zones, crete record -> add front end server public ip in value section
+
+
+###########################
+++++++++++++++++++++++
+1)proxy setup
+2)server connection test
+
+
+++++++++++++++++++++++++++++
+#############################
